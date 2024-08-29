@@ -1,18 +1,20 @@
 const express = require('express'); 
 const cors = require('cors');
-const fs = require('fs');
+const yenv = require('yenv')
 
 const app = express();           
 const port = 8080;                  
 
 var mysql = require('mysql');
+const env = yenv('env.yaml', { env: 'production' })
 
+console.log(env.PORT)
 var con = mysql.createConnection({
-  host: "awseb-e-bameshx58q-stack-awsebrdsdatabase-vhwjiyhkxjqo.crgi842s426u.eu-central-1.rds.amazonaws.com",
-  user: "ebroot",
-  port: 3306,
-  password: db_pass,
-  database: "ebdb"
+  host: env.DB_HOST,
+  user: env.DB_USERNAME,
+  port: env.DB_PORT,
+  password: env.DB_PASS,
+  database: env.DB_NAME
 });
 
 app.use(cors({
