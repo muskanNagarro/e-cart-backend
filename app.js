@@ -11,7 +11,7 @@ var con = mysql.createConnection({
   host: "awseb-e-bameshx58q-stack-awsebrdsdatabase-vhwjiyhkxjqo.crgi842s426u.eu-central-1.rds.amazonaws.com",
   user: "ebroot",
   port: 3306,
-  password: "admin123",
+  password: db_pass,
   database: "ebdb"
 });
 

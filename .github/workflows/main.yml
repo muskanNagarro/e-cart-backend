@@ -24,6 +24,7 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          db_pass: ${{ secrets.DB_PASS }}
           application_name: 'E-comm-2-env'
           environment_name: 'E-comm-2-env-env'
           version_label: ${{ github.sha }}
