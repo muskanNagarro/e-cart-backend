@@ -6,7 +6,7 @@ const app = express();
 const port = 8080;                  
 
 var mysql = require('mysql');
-const env = yenv('env.yaml', { env: 'production' })
+const env = yenv('env.yaml', { env: 'development' })
 
 console.log(env.PORT)
 var con = mysql.createConnection({
